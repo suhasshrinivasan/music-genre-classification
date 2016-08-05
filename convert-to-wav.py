@@ -25,6 +25,7 @@ for genre_dir in genre_dirs:
 	os.chdir(genre_dir)
 
 	# echo contents before altering
+	print('Contents of ' + genre_dir + ' before conversion: ')
 	os.system("ls")
 
 	# loop through each file in current dir
@@ -35,6 +36,8 @@ for genre_dir in genre_dirs:
 	# delete .au from current dir
 	os.system("rm *.au")
 	# echo contents of current dir
+	print('After conversion:')
 	os.system("ls")
+	print('\n')
 
 print("Conversion complete. Check respective directories.")
