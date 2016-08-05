@@ -40,7 +40,7 @@ for wavfile in wavfiles:
 # Plot spectrogram for each wavfile
 for song_id, song_array, sampling_rate in zip(wavfiles, song_arrays, sampling_rates):
 	plt.specgram(song_array, Fs=sampling_rate)
-	print("Plotting spectrogram of sog_id: " + song_id)
+	print("Plotting spectrogram of song_id: " + song_id)
 	plt.show()
 
 print("Done")
