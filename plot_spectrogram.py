@@ -37,10 +37,16 @@ for wavfile in wavfiles:
 	sampling_rates.append(sampling_rate)
 	song_arrays.append(song_array)
 
-# Plot spectrogram for each wavfile
-for song_id, song_array, sampling_rate in zip(wavfiles, song_arrays, sampling_rates):
-	plt.specgram(song_array, Fs=sampling_rate)
-	print("Plotting spectrogram of song_id: " + song_id)
-	plt.show()
 
-print("Done")
+i = 1  # plot number
+# Plot spectrogram for each wave_file
+for song_id, song_array, sampling_rate in zip(wave_files, song_arrays, sampling_rates):
+    # Create subplots
+    plt.subplot(6, 3, i)
+    i += 1
+    plt.title(song_id)
+    plt.specgram(song_array[:660150], Fs=sampling_rate)
+    # print("Plotting spectrogram of song_id: " + song_id)
+
+plt.savefig('Spectrogram.png')
+plt.show()
